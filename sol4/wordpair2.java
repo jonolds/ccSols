@@ -8,7 +8,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class wordpair2 implements Writable,WritableComparable<wordpair2> {
+class wordpair2 implements Writable,WritableComparable<wordpair2> {
 
     private Text word;
     private Text neighbor;

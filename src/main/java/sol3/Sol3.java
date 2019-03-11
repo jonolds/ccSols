@@ -38,7 +38,7 @@ public class Sol3 {
 		}
 	}
 
-	public static void run(String... args) throws Exception {
+	public static void main3(String[] args) throws Exception {
 		Configuration conf = new Configuration();
 		String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
 		if (otherArgs.length != 2) {
@@ -47,7 +47,7 @@ public class Sol3 {
 		}
 		new Path(args[1]).getFileSystem(conf).delete(new Path(otherArgs[1]), true);
 
-		Job job = Job.getInstance(conf, "word count");
+		Job job = Job.getInstance(conf, "word count Sol3");
 		job.setJarByClass(Sol3.class);
 		job.setMapperClass(TokenizerMapper.class);
 		job.setCombinerClass(IntSumReducer.class);

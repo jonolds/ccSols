@@ -53,7 +53,7 @@ public class Sol1 {
 		}
 	}
 	
-	public static void run(String... args) throws Exception {
+	public static void main1(String[] args) throws Exception {
 		Configuration conf = new Configuration();
 		String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
 		if (otherArgs.length != 2) {
@@ -62,7 +62,7 @@ public class Sol1 {
 		}
 		FileUtils.deleteDirectory(new File(otherArgs[1]));
 
-		Job job = Job.getInstance(conf, "word count 1");
+		Job job = Job.getInstance(conf, "word count Sol1");
 		job.setJarByClass(Sol1.class);
 		job.setMapperClass(TokenizerMapper.class);
 		job.setCombinerClass(IntSumReducer.class);

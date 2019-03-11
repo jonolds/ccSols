@@ -50,7 +50,7 @@ public class Sol2 {
 		}
 	}
 	
-	public static void run(String... args) throws Exception {
+	public static void main2(String[] args) throws Exception {
 		Configuration conf = new Configuration();
 		String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
 		if (otherArgs.length != 2) {
@@ -59,7 +59,7 @@ public class Sol2 {
 		}
 		new Path(args[1]).getFileSystem(conf).delete(new Path(otherArgs[1]), true);
 		
-		Job job = Job.getInstance(conf, "BigramCount");
+		Job job = Job.getInstance(conf, "BigramCount Sol2");
 		job.setJarByClass(Sol2.class);
 		job.setMapperClass(TokenizerMapper.class);
 		job.setCombinerClass(IntSumReducer.class);
