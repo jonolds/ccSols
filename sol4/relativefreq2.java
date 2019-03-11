@@ -109,3 +109,5 @@ public class relativefreq2 {
 		System.out.println("\n***************** " + (result ? "Job 4 SUCCESS" : "Job 4 FAILED") + "\n");
 		if(!result)
 			System.exit(1);
+	}
+}

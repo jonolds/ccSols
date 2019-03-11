@@ -114,4 +114,5 @@ public class relativefreq1 {
 		FileOutputFormat.setOutputPath(job, new Path(otherArgs[1] + "/out1"));
 		if(!job.waitForCompletion(true))
 			System.exit(1);
-	
+	} 
+}
