@@ -3,7 +3,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.util.GenericOptionsParser;
 
-public class Sol4Driver {
+public class Sol4driver {
 
 	public static void main4(String[] args) throws Exception {
 		Configuration conf = new Configuration();
