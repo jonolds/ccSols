@@ -8,7 +8,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class NewText implements Writable,WritableComparable<NewText> {
+public class NewText implements Writable, WritableComparable<NewText> {
 
     private Text word;
 
@@ -73,5 +73,4 @@ public class NewText implements Writable,WritableComparable<NewText> {
     public Text getWord() {
         return word;
     }
-
 }
