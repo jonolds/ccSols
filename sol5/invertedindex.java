@@ -50,10 +50,10 @@ public class invertedindex {
 		public void cleanup(Context context) throws IOException, InterruptedException {
 			Map<String, Integer> map = getMap();
 //			for (Map.Entry<String, Integer> entry : map.entrySet()) {
-//				String key = entry.getKey().toString();
-//				Integer value = entry.getValue();
-//				System.out.println("key, " + key + " value " + value);
-//			}
+//			String key = entry.getKey().toString();
+//			Integer value = entry.getValue();
+//			System.out.println("key, " + key + " value " + value);
+//		}
 			Iterator<Map.Entry<String, Integer>> it = map.entrySet().iterator();
 			while (it.hasNext()) {
 				Map.Entry<String, Integer> entry = it.next();
@@ -62,14 +62,14 @@ public class invertedindex {
 				wordPair.setWord(sKey);
 				wordPair.setNeighbor(filename.toString());
 				context.write(wordPair, new IntWritable(total));
-			} //end of while
-		} //end of cleanup
+			}
+		}
 
 		public Map<String, Integer> getMap() {
 			if (null == map)
 				map = new HashMap<String, Integer>();
 			return map;
-		} //end of getMap
+		}
 
 	}
 

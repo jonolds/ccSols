@@ -7,10 +7,8 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class wordpair1 implements Writable,WritableComparable<wordpair1> {
-
-    private Text word;
-    private Text neighbor;
+public class wordpair1 implements Writable, WritableComparable<wordpair1> {
+    private Text word, neighbor;
 
     public wordpair1(Text word, Text neighbor) {
         this.word = word;
@@ -29,14 +27,12 @@ public class wordpair1 implements Writable,WritableComparable<wordpair1> {
     @Override
     public int compareTo(wordpair1 other) {
         int returnVal = this.word.compareTo(other.getWord());
-        if(returnVal != 0){
+        if(returnVal != 0)
             return returnVal;
-        }
-        if(this.neighbor.toString().equals("*")){
+        if(this.neighbor.toString().equals("*"))
             return -1;
-        }else if(other.getNeighbor().toString().equals("*")){
+        else if(other.getNeighbor().toString().equals("*"))
             return 1;
-        }
         return this.neighbor.compareTo(other.getNeighbor());
     }
 
@@ -59,21 +55,16 @@ public class wordpair1 implements Writable,WritableComparable<wordpair1> {
     }
 
     @Override
-    public String toString() {
-        return "{word=["+word+"]"+
-               " neighbor=["+neighbor+"]}";
-    }
+    public String toString() { return "{word=["+word+"]" + " neighbor=[" + neighbor + "]}"; }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         wordpair1 wordPair = (wordpair1) o;
 
         if (neighbor != null ? !neighbor.equals(wordPair.neighbor) : wordPair.neighbor != null) return false;
         if (word != null ? !word.equals(wordPair.word) : wordPair.word != null) return false;
-
         return true;
     }
 
@@ -84,18 +75,8 @@ public class wordpair1 implements Writable,WritableComparable<wordpair1> {
         return result;
     }
 
-    public void setWord(String word){
-        this.word.set(word);
-    }
-    public void setNeighbor(String neighbor){
-        this.neighbor.set(neighbor);
-    }
-
-    public Text getWord() {
-        return word;
-    }
-
-    public Text getNeighbor() {
-        return neighbor;
-    }
+    public void setWord(String word){ this.word.set(word); }
+    public void setNeighbor(String neighbor){ this.neighbor.set(neighbor); }
+    public Text getWord() { return word; }
+    public Text getNeighbor() { return neighbor; }
 }

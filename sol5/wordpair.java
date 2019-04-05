@@ -9,7 +9,7 @@ import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Partitioner;
 
-public class wordpair implements Writable,WritableComparable<wordpair> {
+public class wordpair implements Writable, WritableComparable<wordpair> {
 	private Text word, neighbor;
 
 	public wordpair(Text word, Text neighbor) {
